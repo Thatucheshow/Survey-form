@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>survey-form</title>
+    <style>
+      body {
+        background: url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+        background-repeat: no repeat;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        line-height: 1.4;
+      }
+      #content {
+        max-width: 580px;
+        margin: 0 auto;
+      }
+      @media (min-width: 590px) {
+        #content {
+          max-width: 550px;
+        }
+      }
+      @media (min-width: 780px) {
+        #content {
+          max-width: 600px;
+        }
+      }
+      #header {
+        margin-bottom: 30px;
+        padding: 10px;
+      }
+      form {
+        background: rgba(27, 27, 50, 0.8);
+        border-radius: 2.5px;
+        padding: 50px 10px;
+        color: white;
+        height: 100%;
+        /*margin-left:100px;
+  margin-right:100px;*/
+      }
+      @media (min-width: 400px) {
+        form {
+          padding: 50px;
+        }
+      }
+      #title {
+        text-align: center;
+        color: white;
+        font-size: 33px;
+        line-height: 1.1;
+      }
+      #description {
+        text-align: center;
+        color: white;
+        font-weight: ;
+        font-size: 18px;
+        margin-bottom: 8px;
+        margin-top: 0;
+      }
+      label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      label:hover {
+        transform: scale(1.05);
+      }
+      .form_input {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+        min-height: 20px;
+        min-width: 20px;
+        color: #5f6a75;
+      }
+      .radio_button,
+      .checkbox_button {
+        display: inline-block;
+        margin-right: 10px;
+        min-height: 20px;
+        min-width: 20px;
+      }
+      p {
+        margin-top: 35px;
+      }
+      #comment {
+        width: 100%;
+        border: 0;
+      }
+      #submit {
+        margin: 0 auto;
+        width: 100%;
+        margin-top: 20px;
+        padding: 15px;
+        background: red;
+        border: 0;
+        border-radius: 2.5px;
+        color: white;
+        cursor: pointer;
+      }
+      footer p {
+        color: cornsilk;
+      }
+    </style>
+  </head>
+  <body id="content">
+    <header id="header">
+      <h1 id="title">CodeCamp Survey Form</h1>
+      <p id="description">
+        <i>Thank you for taking the time to help us improve the platform</i>
+      </p>
+    </header>
+    <form id="survey-form">
+      <label id="name-label" for="name">Name</label>
+      <input
+        type="text"
+        class="form_input"
+        id="name"
+        name="name"
+        placeholder="Enter your name**..."
+        required
+      />
+      <label id="email-label" for="email">Email</label>
+      <input
+        type="email"
+        class="form_input"
+        id="email"
+        name="emial"
+        placeholder="Email**..."
+        required
+      />
+      <label id="number-label" for="number">Age (optional)</label>
+      <input
+        type="number"
+        class="form_input"
+        id="number"
+        name="number"
+        placeholder="Age**..."
+        min="18"
+        max="25"
+      />
+      <label for="dropdown">Choose your current role:</label>
+      <select name="dropdown" class="form_input" id="dropdown">
+        <option disabled selected value>Select current role</option>
+        <option value="Free_lance">Free lancer</option>
+        <option value="student">Student</option>
+        <option value="employed">Full time job</option>
+        <option value="no_response">Prefer not to say</option>
+      </select>
+      <p>Would you recommend CodeCamp to a friend?</p>
+      <label for="yes">
+        <input
+          type="radio"
+          class="radio_button"
+          name="answer"
+          id="yes"
+          value="Yes"
+          checked
+        />
+        Yes</label
+      >
+      <label for="no">
+        <input
+          type="radio"
+          class="radio_button"
+          name="answer"
+          id="no"
+          value="No"
+        />
+        No</label
+      >
+      <label for="not_sure">
+        <input
+          type="radio"
+          class="radio_button"
+          name="answer"
+          id="not_sure"
+          value="Not Sure"
+        />
+        Not Sure</label
+      >
+      <label for="dropdown_two"
+        >What is your favorite feature of freeCodeCamp?</label
+      >
+      <select class="form_input" name="dropdown_two" id="dropdown_two">
+        <option disabled selected value>Select option..</option>
+        <option value="community">Community</option>
+        <option value="projects">Projects</option>
+        <option value="courses">Courses</option>
+      </select>
+      <p>What would you like to see improved? (check all that apply)</p>
+      <label for="front-end Project">
+        <input
+          type="checkbox"
+          class="checkbox_button"
+          name="front-end Projects"
+          id="front-end Projects"
+          value="Front-end"
+        />
+        Front-end Projects</label
+      >
+      <label for="back-end Projects">
+        <input
+          type="checkbox"
+          class="checkbox_button"
+          name="back-end Projects"
+          id="back-end Projects"
+          value="Back-end"
+        />
+        Back-end Projects</label
+      >
+      <label for="challenges">
+        <input
+          type="checkbox"
+          class="checkbox_button"
+          name="challenges"
+          id="challenges"
+          value="Challenges"
+        />
+        Challenges</label
+      >
+      <label for="open_source">
+        <input
+          type="checkbox"
+          class="checkbox_button"
+          name="open_source_"
+          id="open_source"
+          value="Opensource"
+        />
+        Open Source Community</label
+      >
+      <label for="videos">
+        <input
+          type="checkbox"
+          class="checkbox_button"
+          name="videos"
+          id="videos"
+          value="Videos"
+        />
+        Videos</label
+      >
+      <label for="forum">
+        <input
+          type="checkbox"
+          class="checkbox_button"
+          name="forum"
+          id="forum"
+          value="Forum"
+        />
+        Forum</label
+      >
+      <label for="courses">
+        <input
+          type="checkbox"
+          class="checkbox_button"
+          name="courses"
+          id="courses"
+          value="Courses"
+        />
+        Additional Courses</label
+      >
+      <p>Any comments or suggestions?</p>
+      <textarea
+        name="comment"
+        id="comment"
+        cols="50"
+        rows="10"
+        placeholder="Enter comment..."
+      ></textarea>
+      <button id="submit">Submit</button>
+    </form>
+  </body>
+  <footer>
+    <p>&copy; 2021 project by Uchechukwu Okeke</p>
+  </footer>
+</html>
